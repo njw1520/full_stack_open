@@ -3,10 +3,23 @@
   participant browser
   participant server
 
-  browser-->>server: POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+  browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
   activate server
-  server-->>browser: 201 Created
+  server-->>browser: 200 OK - HTML page
   deactivate server
 
-  Note left of browser: This time the server does not ask for a redirect, the browser stays on the same page, and it sends no further HTTP requests.
+  browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+  activate server
+  server-->>browser: CSS File
+  deactivate server
+
+  browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+  activate server
+  server-->>browser: JS File
+  deactivate server
+
+  browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+  activate server
+  server-->>browser: JSON File
+  deactivate server
 ```
