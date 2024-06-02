@@ -8,5 +8,5 @@
   server-->>browser: 201 Created
   deactivate server
 
-  Note right of browser: This time the server does not ask for a redirect, the browser stays on the same page, and it sends no further HTTP requests.
+  Note right of browser: Note that instead of the redirect request. The browser stays on the same page and sends no further HTTP requests.
 ```
